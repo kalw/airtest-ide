@@ -6,5 +6,5 @@ cask 'airtest-ide' do
     name 'AirTest-IDE'
     homepage 'http://airtest.netease.com/'
   
-    link 'AirTest-IDE.app'
+    app 'AirTest-IDE.app'
   end

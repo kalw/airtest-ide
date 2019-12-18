@@ -6,6 +6,6 @@ cask 'gear360' do
     name 'Gear360'
     homepage 'https://www.samsung.com/us/support/owners/product/gear-360-2017'
   
-    pkg 'Gear360Mac_#{version}.pkg', allow_untrusted: true
+    pkg "Gear360Mac_#{version}.pkg", allow_untrusted: true
     
   end

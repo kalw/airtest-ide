@@ -6,6 +6,6 @@ cask 'gear360-action-director' do
     name 'Gear360-Action-Director'
     homepage 'https://www.samsung.com/us/support/owners/product/gear-360-2017'
   
-    pkg 'Gear360Mac_#{version}_signed.pkg', allow_untrusted: true
+    pkg "Gear360Mac_#{version}_signed.pkg", allow_untrusted: true
     
   end

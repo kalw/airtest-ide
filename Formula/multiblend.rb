@@ -22,7 +22,7 @@ class Multiblend < Formula
            "-lpng",
            "multiblend.cpp",
            "-o multiblend"
-    bin.install_symlink Dir["multiblend"]
+    bin.install_symlink "multiblend"
   end
 
   test do

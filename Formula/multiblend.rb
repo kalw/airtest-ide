@@ -21,8 +21,10 @@ class Multiblend < Formula
            "-lturbojpeg",
            "-lpng",
            "multiblend.cpp",
-           "-o multiblend"
-    prefix.install 'multiblend'
+           "-omultiblend"
+    bin.mkpath
+    prefix.install "multiblend"
+    mv "#{prefix}/multiblend", "#{bin}/multiblend"
   end
 
   test do

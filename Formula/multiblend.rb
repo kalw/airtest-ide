@@ -9,7 +9,15 @@ class Multiblend < Formula
   bottle :unneeded
   
   def install
-    system "g++","-msse2","-O3,"-ltiff","-ltiffxx","-ljpeg","-lpng","multiblend.cpp","-o multiblend"
+    system "g++",
+           "-msse2",
+           "-O3",
+           "-ltiff",
+           "-ltiffxx",
+           "-ljpeg",
+           "-lpng",
+           "multiblend.cpp",
+           "-o multiblend"
     bin.install_symlink Dir["multiblend"]
   end
 

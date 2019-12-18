@@ -7,14 +7,18 @@ class Multiblend < Formula
   revision 1
 
   bottle :unneeded
-  
+
+  depends_on "jpeg-turbo"
+
   def install
     system "g++",
            "-msse2",
            "-O3",
+           "-I /usr/local/opt/jpeg-turbo/include/",
+           "-L /usr/local/opt/jpeg-turbo/lib/",
            "-ltiff",
            "-ltiffxx",
-           "-ljpeg",
+           "-lturbojpeg",
            "-lpng",
            "multiblend.cpp",
            "-o multiblend"

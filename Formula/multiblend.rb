@@ -8,7 +8,7 @@ class Multiblend < Formula
 
   bottle :unneeded
 
-  depends_on "jpeg-turbo"
+  depends_on formula: "jpeg-turbo"
 
   def install
     system "g++",

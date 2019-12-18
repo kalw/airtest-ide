@@ -3,7 +3,7 @@ class Multiblend < Formula
   homepage "http://horman.net/multiblend/"
   version "0.6.2"
   url "http://horman.net/multiblend/multiblend#{version}.tar.gz"
-  sha256 "fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee"
+  sha256 "6b6ed1ee0c96548803c9a8e8f432f93af2d7829f05b3c4e1e5cd0e2981e91d46"
   revision 1
 
   bottle :unneeded

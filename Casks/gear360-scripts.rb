@@ -12,6 +12,7 @@ cask 'gear360-scripts' do
     depends_on formula: "ffmpeg"
     depends_on formula: "multiblend"
     depends_on formula: "parallel"
+    depends_on formula: "exiftool"
     depends_on cask: "hugin"
 
     binary "gear360pano-master/gear360pano.sh", target: "gear360-jpg2pto"

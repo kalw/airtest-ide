@@ -33,6 +33,8 @@ cask 'gear360-scripts' do
                       '-E',
                       '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
+                      '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
+                      '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',
                       "#{staged_path}/gear360pano-master/gear360video.sh"
                   ]
     end

@@ -18,13 +18,19 @@ cask 'gear360-scripts' do
     binary "gear360pano-master/gear360video.sh", target: "gear360-mp42pto"
 
     preflight do
-            system_command '/bin/pwd'
             system_command '/usr/bin/sed',
             args: [
                       '-E',
                       '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
                       "#{staged_path}/gear360pano-master/gear360pano.sh"
+                  ]
+            system_command '/usr/bin/sed',
+            args: [
+                      '-E',
+                      '-i','.orig',
+                      '-e', 's/readlink /greadlink /g',
+                      "#{staged_path}/gear360pano-master/gear360video.sh"
                   ]
     end
 

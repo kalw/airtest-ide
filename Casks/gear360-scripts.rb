@@ -22,7 +22,7 @@ ask 'gear360-scripts' do
             system_command '/usr/bin/sed',
             args: [
                       '-E',
-                      '-i','.orig'
+                      '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
                       "#{staged_path}/gear360pano-master/gear360pano.sh"
                   ]

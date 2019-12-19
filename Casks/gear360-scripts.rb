@@ -35,6 +35,7 @@ cask 'gear360-scripts' do
                       '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
                       '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',
                       '-e', 's#\$PTOTMPL4096$#\$DIR/\$PTOTMPL4096#',
+                      '-e', 's#^DIR=.*$#WHICH=\$(which $0)\nDIR=\$(dirname \$(greadlink -f \$WHICH))#',
                       "#{staged_path}/gear360pano-master/gear360video.sh"
                   ]
     end

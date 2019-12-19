@@ -24,6 +24,8 @@ cask 'gear360-scripts' do
                       '-E',
                       '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
+                      '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
+                      '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',
                       "#{staged_path}/gear360pano-master/gear360pano.sh"
                   ]
             system_command '/usr/bin/sed',
@@ -33,14 +35,6 @@ cask 'gear360-scripts' do
                       '-e', 's/readlink /greadlink /g',
                       "#{staged_path}/gear360pano-master/gear360video.sh"
                   ]
-            system_command '/usr/bin/sed',
-            args: [
-                      '-E',
-                      '-i','.orig',
-                      '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
-                      "#{staged_path}/gear360pano-master/gear360pano.sh"
-                  ]
-        
     end
 
 

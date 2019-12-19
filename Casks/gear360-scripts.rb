@@ -22,7 +22,7 @@ cask 'gear360-scripts' do
     preflight do
             system_command '/usr/local/bin/gsed',
             args: [
-                      '-i','.orig',
+                      '-i.orig',
                       '-e', 's/readlink /greadlink /g',
                       '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
                       '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',
@@ -30,7 +30,7 @@ cask 'gear360-scripts' do
                   ]
             system_command '/usr/local/bin/gsed',
             args: [
-                      '-i','.orig',
+                      '-i.orig',
                       '-e', 's/readlink /greadlink /g',
                       '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
                       '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',

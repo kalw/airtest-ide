@@ -9,6 +9,7 @@ cask 'gear360-scripts' do
 
     depends_on formula: "bash"
     depends_on formula: "coreutils"
+    depends_on formula: "gnu-sed"
     depends_on formula: "ffmpeg"
     depends_on formula: "multiblend"
     depends_on formula: "parallel"
@@ -19,18 +20,16 @@ cask 'gear360-scripts' do
     binary "gear360pano-master/gear360video.sh", target: "gear360-mp42pto"
 
     preflight do
-            system_command '/usr/bin/sed',
+            system_command '/usr/local/bin/gsed',
             args: [
-                      '-E',
                       '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
                       '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',
                       '-e', 's#enblend#/Applications/Hugin/tools_mac/enblend#g',
                       "#{staged_path}/gear360pano-master/gear360pano.sh"
                   ]
-            system_command '/usr/bin/sed',
+            system_command '/usr/local/bin/gsed',
             args: [
-                      '-E',
                       '-i','.orig',
                       '-e', 's/readlink /greadlink /g',
                       '-e', 's#nona#/Applications/Hugin/tools_mac/nona#g',

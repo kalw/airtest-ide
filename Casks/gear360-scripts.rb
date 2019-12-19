@@ -1,4 +1,4 @@
-ask 'gear360-scripts' do
+cask 'gear360-scripts' do
 
     version "master"
     url "https://github.com/ultramango/gear360pano/archive/#{version}.zip"

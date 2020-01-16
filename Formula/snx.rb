@@ -13,6 +13,6 @@ class Snx < Formula
   end
 
   test do
-    system "script", "-q", "/dev/null", /usr/local/bin/snx
+    system "script", "-q", "/dev/null", "/usr/local/bin/snx"
   end
 end

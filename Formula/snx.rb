@@ -8,20 +8,21 @@ class Snx < Formula
   bottle :unneeded
   
   patch p0: "diff --git a/extract.sh b/extract.sh
-index e69de29..cb6a05f 100644
---- a/extract.sh
-+++ b/extract.sh
-@@ -0,0 +1,2 @@
-+tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh
-+
-"
+    index e69de29..cb6a05f 100644
+    --- a/extract.sh
+    +++ b/extract.sh
+    @@ -0,0 +1,2 @@
+    +tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh
+    +"
 
   def install
     prefix.install "snx_install_osx.sh"
-    system "tail", "-n", "+64", "#{prefix}/snx_install_osx.sh", "|", "bunzip2", "-c", "-", ">", "#{prefix}/brew.installer.sh"
-    system "sed", "-e", "'s!INSTALL_DIR=.*!INSTALL_DIR=#{prefix}!'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
-    system "sed", "-e", "'s!/etc/snx!#{prefix}/etc/snx!g'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
-    system "sed", "-e", "'s!TMP_DIR=.*!TMP_DIR=#{prefix}!'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
+    system "bash", "-x", "extract.sh"
+    inreplace "#{prefix}/brew.installer.sh" do |s|
+      s.gsub! /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"
+      s.gsub! "/etc/snx", "#{prefix}/etc/snx"
+      s.gsub! /TMP_DIR=.*/ "TMP_DIR=#{prefix}"
+    end
     system "bash", "-x", "#{prefix}/brew.installer.sh"
     bin.mkpath
     mv "#{prefix}/snx", "#{bin}/snx"

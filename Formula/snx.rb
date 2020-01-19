@@ -7,7 +7,7 @@ class Snx < Formula
 
   bottle :unneeded
   
-  patch p0: :DATA
+  patch :DATA
 
   def install
     prefix.install "snx_install_osx.sh"

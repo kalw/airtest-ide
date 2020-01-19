@@ -6,11 +6,11 @@ class Snx < Formula
   sha256 "539574a0594590f280a6858e436072b8701188445973270c974d76c92e319369"
 
   bottle :unneeded
-  
-  patch :DATA
 
   def install
     prefix.install "snx_install_osx.sh"
+    system "touch", "#{prefix}/brew.installer.sh"
+    inreplace /^$/, "tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh"
     inreplace "#{prefix}/extract.sh", "_PREEFIX_", "#{prefix}"
     system "bash", "-x", "extract.sh"
     inreplace "#{prefix}/brew.installer.sh", /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"
@@ -25,12 +25,3 @@ class Snx < Formula
     system "script", "-q", "/dev/null", "/usr/local/bin/snx"
   end
 end
-
-__END__
-diff --git a/extract.sh b/extract.sh
-index e69de29..cb6a05f 100644
---- a/extract.sh
-+++ b/extract.sh
-@@ -0,0 +1,2 @@
-+tail -n +64 _PREFIX_/snx_install_osx.sh | bunzip2 -c - > _PREFIX_/brew.installer.sh
-+

@@ -13,6 +13,7 @@ class Snx < Formula
     prefix.install "snx_install_osx.sh"
     (prefix/extract_file).write <<~EOS
       tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh
+      tar -zxvf #{prefix}/brew.installer.sh -C #{prefix}/
     EOS
     system "bash", "-x", prefix/extract_file
     inreplace "#{prefix}/brew.installer.sh", /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"

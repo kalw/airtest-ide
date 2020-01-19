@@ -23,7 +23,7 @@ class Snx < Formula
     inreplace "#{opt_prefix}/brew.installer.sh", /TMP_DIR=.*/, "TMP_DIR=#{opt_prefix}"
     system "bash", "-x", "#{prefix}/brew.installer.sh"
     bin.mkpath
-    mv "#{prefix}/snx", "#{bin}/snx"
+    mv "#{opt_prefix}/snx", "#{bin}/snx"
   end
 
   test do

@@ -12,7 +12,7 @@ class Snx < Formula
     --- a/extract.sh
     +++ b/extract.sh
     @@ -0,0 +1,2 @@
-    +tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh
+    +tail -n +64 HOMEBREW_PREFIX/snx_install_osx.sh | bunzip2 -c - > HOMEBREW_PREFIX/brew.installer.sh
     +"
 
   def install

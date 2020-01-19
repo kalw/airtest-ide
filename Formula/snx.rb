@@ -21,7 +21,9 @@ class Snx < Formula
     inreplace "#{prefix}/installer.sh", /TMP_DIR=.*/, "TMP_DIR=#{prefix}"
     system "bash", "-x", "#{prefix}/installer.sh"
     bin.mkpath
+    etc.mkpath
     mv "#{prefix}/snx", "#{bin}/snx"
+    mv "#{prefix}/etc/snx", "#{etc}/snx"
   end
 
   test do

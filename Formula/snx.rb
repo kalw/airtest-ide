@@ -11,9 +11,8 @@ class Snx < Formula
   def install
     extract_file = "extract.sh"
     prefix.install "snx_install_osx.sh"
-    system "touch", "#{prefix}/extract.sh"
-    (prefix/extract_file).write <<~'EOS'
-    tail -n +64 _PREFIX_/snx_install_osx.sh | bunzip2 -c - > _PREFIX_/brew.installer.sh
+    (prefix/extract_file).write <<~EOS
+      tail -n +64 #{prefix}/snx_install_osx.sh | bunzip2 -c - > #{prefix}/brew.installer.sh
     EOS
     inreplace "#{prefix}/extract.sh", "_PREFIX_", "#{prefix}"
     system "bash", "-x", "extract.sh"

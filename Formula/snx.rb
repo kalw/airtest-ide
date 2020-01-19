@@ -18,10 +18,9 @@ class Snx < Formula
   def install
     prefix.install "snx_install_osx.sh"
     system "bash", "-x", "extract.sh"
-    inreplace "#{prefix}/brew.installer.sh" do |s|
-      s.gsub! /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"
-      s.gsub! "/etc/snx", "#{prefix}/etc/snx"
-      s.gsub! /TMP_DIR=.*/, "TMP_DIR=#{prefix}"
+    inreplace "#{prefix}/brew.installer.sh" /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"
+    inreplace "#{prefix}/brew.installer.sh" "/etc/snx", "#{prefix}/etc/snx"
+    inreplace "#{prefix}/brew.installer.sh" /TMP_DIR=.*/, "TMP_DIR=#{prefix}"
     end
     system "bash", "-x", "#{prefix}/brew.installer.sh"
     bin.mkpath

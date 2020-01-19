@@ -13,7 +13,9 @@ class Snx < Formula
     system "sed", "-e", "'s!INSTALL_DIR=.*!INSTALL_DIR=#{prefix}!'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
     system "sed", "-e", "'s!/etc/snx!#{prefix}/etc/snx!g'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
     system "sed", "-e", "'s!TMP_DIR=.*!TMP_DIR=#{prefix}!'", "installer.sh", ">", "#{prefix}/brew.installer.sh"
-    system "bash", "-x", "#{prefix}/snx_install_osx.sh"
+    system "bash", "-x", "#{prefix}/brew.installer.sh"
+    bin.mkpath
+    mv "#{prefix}/snx", "#{bin}/snx"
   end
 
   test do

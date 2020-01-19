@@ -7,13 +7,7 @@ class Snx < Formula
 
   bottle :unneeded
   
-  patch p0: "diff --git a/extract.sh b/extract.sh
-    index e69de29..cb6a05f 100644
-    --- a/extract.sh
-    +++ b/extract.sh
-    @@ -0,0 +1,2 @@
-    +tail -n +64 HOMEBREW_PREFIX/snx_install_osx.sh | bunzip2 -c - > HOMEBREW_PREFIX/brew.installer.sh
-    +"
+  patch p0: :DATA
 
   def install
     prefix.install "snx_install_osx.sh"
@@ -31,3 +25,11 @@ class Snx < Formula
   end
 end
 
+__END__
+diff --git a/extract.sh b/extract.sh
+index e69de29..cb6a05f 100644
+--- a/extract.sh
++++ b/extract.sh
+@@ -0,0 +1,2 @@
++tail -n +64 HOMEBREW_PREFIX/snx_install_osx.sh | bunzip2 -c - > HOMEBREW_PREFIX/brew.installer.sh
++

@@ -11,6 +11,7 @@ class Snx < Formula
 
   def install
     prefix.install "snx_install_osx.sh"
+    inreplace "#{prefix}/extract.sh", "_PREEFIX_", "#{prefix}"
     system "bash", "-x", "extract.sh"
     inreplace "#{prefix}/brew.installer.sh", /INSTALL_DIR=.*/, "INSTALL_DIR=#{prefix}"
     inreplace "#{prefix}/brew.installer.sh", "/etc/snx", "#{prefix}/etc/snx"
@@ -31,5 +32,5 @@ index e69de29..cb6a05f 100644
 --- a/extract.sh
 +++ b/extract.sh
 @@ -0,0 +1,2 @@
-+tail -n +64 HOMEBREW_PREFIX/snx_install_osx.sh | bunzip2 -c - > HOMEBREW_PREFIX/brew.installer.sh
++tail -n +64 _PREFIX_/snx_install_osx.sh | bunzip2 -c - > _PREFIX_/brew.installer.sh
 +

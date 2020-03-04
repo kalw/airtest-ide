@@ -1,6 +1,6 @@
 cask 'atlassian-companion' do
     version 'latest'
-    sha256 '0c7301b54cfddaf3cf57afa57fa94f163795af347c0b080e1a999a454ea63874'
+    sha256 '105619763eb622c05d8a4c925f636534d786316040d4eb5490afb37d3484e294'
     
     url "https://update-nucleus.atlassian.com/Atlassian-Companion/291cb34fe2296e5fb82b83a04704c9b4/#{version}/darwin/x64/Atlassian%20Companion.dmg"
     name 'Brainio'

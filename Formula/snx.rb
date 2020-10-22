@@ -2,8 +2,8 @@ class Snx < Formula
   desc "Checkpoint SSL Network Extender command line client"
   homepage "https://checkpoint.com/"
   version "master"
-  url "https://remote.fr.publicisgroupe.net/CSHELL/snx_install_osx.sh"
-  sha256 "539574a0594590f280a6858e436072b8701188445973270c974d76c92e319369"
+  url "https://vpnportal.aktifbank.com.tr/SNX/INSTALL/snx_install.sh"
+  sha256 "8900c3708c1bb695ed9c9e2892544359ec93f38b668af318d585e3ca7efac6a2"
 
   bottle :unneeded
   

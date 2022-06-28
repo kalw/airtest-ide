@@ -6,8 +6,6 @@ class Multiblend < Formula
   sha256 "6b6ed1ee0c96548803c9a8e8f432f93af2d7829f05b3c4e1e5cd0e2981e91d46"
   revision 1
 
-  bottle :unneeded
-
   depends_on "jpeg-turbo"
 
   def install

@@ -3,10 +3,7 @@ class Snx < Formula
   homepage "https://checkpoint.com/"
   version "master"
   url "https://vpnportal.aktifbank.com.tr/SNX/INSTALL/snx_install.sh"
-  sha256 "8900c3708c1bb695ed9c9e2892544359ec93f38b668af318d585e3ca7efac6a2"
-
-  bottle :unneeded
-  
+  sha256 "8900c3708c1bb695ed9c9e2892544359ec93f38b668af318d585e3ca7efac6a2"  
   
   def install
     extract_file = "extract.sh"

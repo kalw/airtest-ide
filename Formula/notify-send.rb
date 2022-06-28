@@ -5,8 +5,6 @@ class NotifySend < Formula
   url "https://raw.githubusercontent.com/fgrehm/vagrant-notify/#{version}/examples/osx/applescript/notify-send.rb"
   sha256 "75f7013a538aa70493e9aa105a846a596f9425df0d2305bde65be6a98dfcb267"
 
-  bottle :unneeded
-
   def install
     bin.mkpath
     prefix.install "notify-send.rb"

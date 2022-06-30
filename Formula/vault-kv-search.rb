@@ -1,4 +1,4 @@
-class vault-kv-search < Formula
+class vaultKvSearch < Formula
   desc "vault-kv-search command line utiliy"
   homepage "https://github.com/xbglowx/vault-kv-search/releases"
   version "0.1.1"

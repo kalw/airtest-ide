@@ -1,17 +1,23 @@
-class Concierge < Formula
-  desc "lambdatest hypertest command line utility"
-  homepage "https://downloads.lambdatest.com/"
-  version "v0.0.1"
-  url "https://downloads.lambdatest.com/concierge/darwin/concierge"
-  sha256 "4358831b7a5af09d80e7f3588ac7ad75c918ba66dcfd9cd463477cd44d78c23a"
+class BrewPipNg < Formula
+  include Language::Python::Shebang
+
+  desc "Install pip packages as homebrew formulae"
+  homepage "https://github.com/josegonzalez/brew-pip"
+  version "a5ab3367cfbce48cd76f8d7bda0ddcb71aa97239"
+  url "https://github.com/josegonzalez/brew-pip.git", 
+    branch: "develop",
+    revision: "a5ab3367cfbce48cd76f8d7bda0ddcb71aa97239"
+  head "https://github.com/josegonzalez/brew-pip.git", branch: "develop"
+  license "MIT"
+
+  depends_on "python@3.11"
 
   def install
-    bin.mkpath
-    prefix.install "concierge"
-    mv "#{prefix}/concierge", "#{bin}/concierge"
+    bin.install "bin/brew-pip"
+    rewrite_shebang detected_python_shebang, bin/"brew-pip"
   end
 
   test do
-    system "script", "-q", "/dev/null", bin/"concierge"
+    system "#{bin}/brew-pip", "--help"
   end
 end

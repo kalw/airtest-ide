@@ -3,7 +3,10 @@ class BrewPipNg < Formula
 
   desc "Install pip packages as homebrew formulae"
   homepage "https://github.com/josegonzalez/brew-pip"
-  url "https://github.com/josegonzalez/brew-pip.git", branch: "develop"
+  url "https://github.com/josegonzalez/brew-pip.git", 
+    branch: "develop",
+    revision: "a5ab3367cfbce48cd76f8d7bda0ddcb71aa97239"
+  head "https://github.com/josegonzalez/brew-pip.git", branch: "develop"
   license "MIT"
 
   # Repository is not maintained in 9+ years

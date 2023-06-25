@@ -6,6 +6,6 @@ cask 'simul-ide' do
     name 'Simul IDE'
     homepage "https://www.simulide.com/"
 
-    app "SimulIDE.app"
+    app "simulide.app"
 
   end

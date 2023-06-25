@@ -6,6 +6,7 @@ cask 'simul-ide' do
     name 'Simul IDE'
     homepage "https://www.simulide.com/"
 
+    container :nested => "SimulIDE_#{version}-SR0_MacOs"
     app "simulide.app"
 
   end
